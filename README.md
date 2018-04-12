@@ -125,14 +125,15 @@ The SDK provides a simple Key Value (KV) read/write model. On login, there are t
     	This method will write a KV pair to this application's global data store. Again, if a key is used more than once (by any user), the value associated with the key will be updated.
 
 --
+
 		void readMyData(string key, out string value);
 
 			string key - a key to read from.
 			out string value - will contain the returned value
 		
 
-		
-   		void readGlobalData(string key, out string value);
+	
+		void readGlobalData(string key, out string value);
 
 			string key - a key to read from.
 			out string value - will contain the returned value
