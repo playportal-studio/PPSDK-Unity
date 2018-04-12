@@ -103,9 +103,16 @@ This method will initiate the login process. If a player is already logged in, i
 			string mySecret - described above; this is from your playPORTAL app config	
 
 
+		Note: The method you created in your code, defined above as:
+		
+			public void playPortalLoginDidSucceed(string p); 
+		
+		will be invoked upon login completion.
 
+
+--
 ##### Data
-The SDK provides a simple Key Value (KV) read/write model. On login, there are two data stores opened / created for this player. There is a private data store for this players exclusive use, and there is a global data store this player shares with all other players of this same app.
+The SDK provides a simple Key Value (KV) read/write model. On login, there are two data stores opened / created for this player. There is a private data store for this players exclusive use, and there is a global data store this player shares with all other players of this same app. If a player logs out and logs in at a later date, the data in the private data store should be as left upon logout. The contents of the global data store will most likely have changed.
 
 
 	    void writeMyData(string key, string value);
