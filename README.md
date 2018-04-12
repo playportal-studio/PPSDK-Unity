@@ -45,6 +45,30 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
 
 
 ### Utilizing SDK functionality
+After the Unity environment configuration is complete, it's time to configure your Unity application to utilize the playPORTAL SDK for various operations. 
+#### Configuring the SDK runtime
+     The SDK must be configured in conjunction with the playPORTAL, so that your Unity app can consume playPORTAL services. The following must be done:
+     - Edit your PlayerController.cs script
+     - Update your myClientID and mySecret string vars with the information from your app configuration in playportal.io.
+          - private static string myClientID = @"iok-cid-yourclientidstringhere";
+	  - private static string mySecret = @"iok-cse-yoursecretstringshere";
+	  - Define and Instantiate a class level PlayPortalController object to use for communicating with the playPORTAL:
+	      public PlayPortalController ppsdk;  // Class level var
+	      ppsdk = new PlayPortalController(); // this is in the Start() method
+	  - Instantiate a playerObject to use for storing player profile information:
+	      public PPSDK_PlayerObject playerObject = new PPSDK_PlayerObject(); // Class level var defined/instantiated 
+
+	  Your app is now ready to begin making calls into the PPSDK plugin.
+
+
+#### Making calls into the PPSDK plugin.
+
+     - SSO Login
+     The SSO login validates a single player (user) against the playPORTAL. Players may log in with a valid playPORTAL set of credentials, or as a guest player. 
+     
+     void ppsdk.Login(bool isGuest,string myClientID,string mySecret); 
+     - This method will initiate the login process. If a player is already logged in, it will reconnect that Player to their playPORTAL account
+
 
 
 
