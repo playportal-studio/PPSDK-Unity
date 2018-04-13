@@ -37,11 +37,11 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
        - MobileCoreServices.framework
        - SafariServices.framework
 
-     - Select an attached target device
-     - Tap "Play button" (run)
-     - App should build and run on the attached iOS device
-     - If Xcode generates an error regarding Objective-c exceptions; fix in Xcode, by selecting "Project" / "Unity-iPhone" and search for "exception". Set "Enable Objective-C Exceptions" to "Yes".
-	* Tap "Play" button again
+    	- Select an attached target device
+	- Tap "Play button" (run)
+     	- App should build and run on the attached iOS device
+     	- If Xcode generates an error regarding Objective-c exceptions; fix in Xcode, by selecting "Project" / "Unity-iPhone" and search for "exception". Set "Enable Objective-C Exceptions" to "Yes".
+	- Tap "Play" button again
 
 -----
 
