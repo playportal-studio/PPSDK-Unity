@@ -1,5 +1,5 @@
 # Unity\_PPSDK\_plugin
-Unity plugin files for playPORTAL SDK by Dynepic, Inc.
+Unity plugin file for playPORTAL SDK by Dynepic, Inc.
 
 
 
@@ -7,44 +7,41 @@ Unity plugin files for playPORTAL SDK by Dynepic, Inc.
 The playPORTAL SDK, as supported with this Unity plugin, provides a simple mechanism for achieving COPPA compliance in Unity games. This README will cover the basics of getting started with this plugin.
 
 
-### iOS
-	* Download this git repo 
+### Preparation
+	* Download / clone this git repo to your Unity dev computer
+	* Identify that dynepic-ppsdk.unitypackage is in the repo 
 
-#### Add files to project
-	* Create a Assets/Plugins/iOS directory (if it doesn't exist) in your Unity project
-	* Copy the UnityBindings.m file into that directory
-	* Copy the PlayPortalController.cs file into your scripts directory (in Unity) so that it can be accessed by your PlayerController.cs file. 
+#### Open your Unity project
+	* Select from Unity menu: "Assets" --> "Import Package" --> "Custom Package"
+	* Choose the dynepic-ppsdk.unitypackage 
+	* Answer the dialog questions to "Import All" of the package contents to the suggested location in Unity
 
 #### Unity Player Settings
 	* In the top level settings, select the iphone icon
 	* In your Player Settings, make the following changes:
     	Other Settings: 
     		- Add Supported URL Schemes: Size:1 and Element 0: ProductName
-      		- Set Scripting Backend is: IL2CPP
+      		- Insure Scripting Backend is: IL2CPP
       		- Check Automatically Sign
-			- Enter the name of your Apple Dev Team
+			- Enter the name of your Apple Dev Team (this can be done in Xcode as well)
 
 #### Build and Run
 	* Tap Build and Run
-	* when Unity completes this step, it should have launched Xcode
+	* when Unity completes this step, it should have launched Xcode	
 
 #### In Xcode
-    * Add the PPSDK framework (see instructions below) to the Classes Folder
-    * Verify that the UnityBindings.m file is in the Libraries/Plugins/iOS folder
     * Select Targets/Unity-iPhone --> Build Phases
-    * Add the following frameworks by tapping --> Link Binary with Libraries
+    * Add the following frameworks by tapping --> Link Binary with Libraries, the "+" for each of:
        - Security.framework
        - Webkit.framework
        - MobileCoreServices.framework
        - SafariServices.framework
 
-     - Select Targets/Unity-iPhone --> Info
-     - Expand the URL Types()
-       - Add 1 row with Identifier: NameFrom_PlayPortal_App_Config  and  URL Schemes: "Same name as Id"
-
-     - Select an attached target
-     - Tap "run" 
-     - App should build
+     - Select an attached target device
+     - Tap "Play button" (run)
+     - App should build and run on the attached iOS device
+     - If Xcode generates an error regarding Objective-c exceptions; fix in Xcode, by selecting "Project" / "Unity-iPhone" and search for "exception". Set "Enable Objective-C Exceptions" to "Yes".
+	* Tap "Play" button again
 
 -----
 
@@ -75,16 +72,16 @@ The SDK must be configured in conjunction with the playPORTAL, so that your Unit
 
 	* Instantiate a method to receive callbacks from Unity message notifications ("true" on login success, else "false").
 	 
-			public void playPortalLoginDidSucceed(string p)
+		public void playPortalLoginDidSucceed(string p)
 		    {
 		    	if(p == "true") {
-					// login success
-					playerObject = ppsdk.GetPlayerObject();
-		          Debug.Log("PlayerController player:" + playerObject);
-				} else {
-					// present some error status
-				}
+				// login success
+				playerObject = ppsdk.GetPlayerObject();
+				Debug.Log("PlayerController player:" + playerObject);
+			} else {
+				// present some error status
 			}
+		    }
 
 
 Your app is now ready to begin making calls into the PPSDK plugin.
