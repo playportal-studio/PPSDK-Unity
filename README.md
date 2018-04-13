@@ -37,11 +37,11 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
        - MobileCoreServices.framework
        - SafariServices.framework
 
-    	- Select an attached target device
-	- Tap "Play button" (run)
-     	- App should build and run on the attached iOS device
-     	- If Xcode generates an error regarding Objective-c exceptions; fix in Xcode, by selecting "Project" / "Unity-iPhone" and search for "exception". Set "Enable Objective-C Exceptions" to "Yes".
-	- Tap "Play" button again
+    * Select an attached target device
+		- Tap "Play button" (run)
+		- App should build and run on the attached iOS device
+     	- Note: If Xcode generates an error regarding Objective-c exceptions; fix error in Xcode by selecting "Project" / "Unity-iPhone" and search for "exception". Set "Enable Objective-C Exceptions" to "Yes".
+		- Tap "Play" button again
 
 -----
 
@@ -52,6 +52,8 @@ After the Unity environment configuration is complete, it's time to configure yo
 The SDK must be configured in conjunction with the playPORTAL, so that your Unity app can consume playPORTAL services. The following must be done (statements in grey blocks are code snippets and examples can be seen in the Unity_PPSDK_example project):
 
 * Edit your PlayerController.cs script
+	* There is a *starter* PlayerController.cs included with the dynepic-ppsdk.unitypackage. It provides a trivial example of using SSO, and the script just needs to be attached to your *player* object via Unity "Inspector".
+ 
 	* Update your myClientID and mySecret string vars with the information from your app definition/configuration in playportal.io.
 
 			private static string myClientID = @"iok-cid-yourclientidstringhere";
