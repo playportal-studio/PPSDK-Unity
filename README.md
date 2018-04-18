@@ -90,16 +90,22 @@ The SDK must be configured in conjunction with the playPORTAL, so that your Unit
 * Edit your PlayerController.cs script
 	* There is a *starter* PlayerController.cs included with the dynepic-ppsdk.unitypackage. It provides a trivial example of using SSO, and the script just needs to be attached to your *player* object via Unity "Inspector".
 
+	* Include the PlayPortal namespace by adding the following statement at the top of your app.
+	```
+	using PlayPortal;
+	```
+
 	* Update your myClientID and mySecret string vars with the information from your app definition/configuration in playportal.io.
 		```
 		private static string myClientID = @"<YOUR_CLIENT_ID_HERE>";
 		private static string mySecret = @"<YOUR_CLIENT_SECRET_HERE";
+		private static strimng myRedirectURI = @"appname/redirect";  // this must match Unity Other settings
 		```
 
 	* Define and Instantiate a class level PlayPortalController object to use for communicating with the playPORTAL:
 		```
 		public PlayPortalController ppsdk;
-		ppsdk = new PlayPortalController();
+	        ppsdk = PlayPortalController.Instance;
 		```
 	* Instantiate a playerObject to use for storing player profile information:
 		```
@@ -109,14 +115,15 @@ The SDK must be configured in conjunction with the playPORTAL, so that your Unit
 	* Instantiate a method to receive callbacks from Unity message notifications ("true" on login success, else "false").
 	```
 	public void playPortalLoginDidSucceed(string p) {
-		  if(p == "true") {
-				// login success
-				playerObject = ppsdk.GetPlayerObject();
-				Debug.Log("PlayerController player:" + playerObject);
-			} else {
-				// present some error status
-			}
-  }
+		if(p == "true") 
+		{
+			// login success
+			playerObject = ppsdk.GetPlayerObject();
+			Debug.Log("PlayerController player:" + playerObject);
+		} else {
+			// present some error status
+		}
+	}
 	```
 
 
