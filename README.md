@@ -136,12 +136,12 @@ Your app is now ready to begin making calls into the PPSDK plugin.
 The SSO login validates a single player (user) against the playPORTAL. Players may log in with a valid playPORTAL set of credentials, or as a guest player.
 This method will initiate the login process. If a player is already logged in, it will reconnect that Player to their playPORTAL account
 
-		void ppsdk.Login(bool isGuest,string myClientID,string mySecret);
+		void ppsdk.Login(bool isGuest,string myClientID,string mySecret, string myRedirectURI);
 
 			bool isGuest - if false, will take this player through the SSO login process. If true, allow player to play as a guest.
 			string myClientID - described above; from your playPORTAL app config
 			string mySecret - described above; this is from your playPORTAL app config
-
+			string myRedirectURI - described above; this is from your playPORTAL app config.
 
 		Note: The method you created in your code, defined above as:
 
