@@ -173,17 +173,25 @@ The SDK provides a simple Key Value (KV) read/write model. On login, there are t
 
 --
 
-		void readMyData(string key, out string value);
+         public void readMyData(string key, Action<string>callback);
 
 			string key - a key to read from.
-			out string value - will contain the returned value
+			callback - C# method that takes a string parameter containing the returned value
+
+			The callback method is defined as:
+						
+			private delegate void ReadDataDelegate(string value);
+			[AOT.MonoPInvokeCallback(typeof(ReadDataDelegate))]  
+			protected static void ReadCallback(string value)
+			{
+				// do something with the value
+			}
 
 
-
-		void readGlobalData(string key, out string value);
+		void readGlobalData(string key, Action<string>callback);
 
 			string key - a key to read from.
-			out string value - will contain the returned value
+			callback - C# method that takes a string parameter containing the returned value (see previous example for method of defining a callback fnx.)
 
 
 -----
