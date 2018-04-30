@@ -39,7 +39,8 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
 
 * ### <b>Step 5:</b> Import the Unity Package
 	* In the Unity menu select: "Assets" --> "Import Package" --> "Custom Package"
-	* Navigate to wherever you cloned/downloaded this repo and choose the dynepic-ppsdk.unitypackage
+	* Navigate to wherever you cloned/downloaded this repo and choose the dynepic-ppsdk.unitypackage or the dynepic-ppsdk-withscene.unitypackage
+	* Note: There are 2 packages; the "withscene" package contains a test scene that binds the test example to a scene.
 	* Ensure that all of the items are selected and click "Import"
 
 * ### <b>Step 6:</b> Add Client ID and Client Secret:
@@ -187,8 +188,13 @@ The SDK provides a simple Key Value (KV) read/write model. On login, there are t
 				// do something with the value
 			}
 
+	public void readMyDataAsDictionary(string key, Action<string>callback);
+		// This returns the KV pair in a JSON string format. The JSON string can be converted to a C# object with:
+	        someObject = (SomeObject)JsonUtility.FromJson(theJsonString, typeof(SomeObject)); 
+		// where SomeObject is defined as appropriate for the data being stored (a simple example is included).
 
-		void readGlobalData(string key, Action<string>callback);
+
+	public void readGlobalData(string key, Action<string>callback);
 
 			string key - a key to read from.
 			callback - C# method that takes a string parameter containing the returned value (see previous example for method of defining a callback fnx.)
