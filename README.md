@@ -39,9 +39,10 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
 
 * ### <b>Step 5:</b> Import the Unity Package
 	* In the Unity menu select: "Assets" --> "Import Package" --> "Custom Package"
-	* Navigate to wherever you cloned/downloaded this repo and choose the dynepic-ppsdk.unitypackage or the dynepic-ppsdk-withscene.unitypackage
-	* Note: There are 2 packages; the "withscene" package contains a test scene that binds the test example to a scene.
+	* Navigate to the directory where you cloned/downloaded this repo and choose the dynepic-ppsdk.unitypackage or the dynepic-ppsdk-withscene.unitypackage
+	* If you are trying the playPORTAL SDK for the first time, it's easiest to use the package with the test scene as the scene binds the controllers (C# files) to the objects in the scene.
 	* Ensure that all of the items are selected and click "Import"
+	* If using the "withscene" package, then switch into the Unity project view (Unity main menu --> Window --> Project). Then double click the "prescene-v1" scene (looks like the Unity logo). This will instantiate a scene, two 3D objects (a sphere and a capsule), and make the appropriate script/object associations. The sphere will also be renamed as "Player". The capsule object may overlay the player object in the scene view, but can be moved without impact.
 
 * ### <b>Step 6:</b> Add Client ID and Client Secret:
 	* In "PlayerController.cs"  replace the following values with the values generated in 'Step 3':
@@ -60,7 +61,7 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
 		* Automatic Signing Team ID: Your Apple Dev Team (this can be done in Xcode as well)
 	* Other Settings / Configuration
 		* Scripting Backend: "IL2CPP"
-  	* Supported URL Schemes -  Size: 1, Element 0: "PRODUCT_NAME"
+  	* Supported URL Schemes -  Size: 1, Element 0: "PRODUCT_NAME" (insure Element 0 matches the redirect URL entered in the PlayPortal. "/redirect" is not required on this URI).
 
 * ### <b>Step 8:</b> Build & Run
 	* In the Unity menu select: "File" --> "Build and Run"
