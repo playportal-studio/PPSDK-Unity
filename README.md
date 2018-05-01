@@ -65,6 +65,7 @@ The playPORTAL SDK, as supported with this Unity plugin, provides a simple mecha
 
 * ### <b>Step 8:</b> Build & Run
 	* In the Unity menu select: "File" --> "Build and Run"
+	* When prompted by Unity, "Save" the work area with an easily recognized name. Note: <b>after the first run, select Append </b> so that the following runs don't require repeating the Xcode config steps described below.
 	* When Unity completes this step, it should have launched Xcode.
 
 * ### <b>Step 9:</b> XCode Setup
