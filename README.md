@@ -1,65 +1,29 @@
 
-***************************************************
+# playPORTAL Unity
 
-playPORTAL UNITY3D SDK unitypackage - ReadMe File
-
-NOTE: 
+---
+**NOTE**: 
 This SDK includes one example script called PlayPortalExample with one login example scene and one general testing scene.
 
-***WARNING: DO NOT EDIT AND SCRIPTS ASIDE FROM THE "PlayPortalExample"
-
-For complete documentation and API instruction, visit https://docs.playportal.io
-
-SECTIONS: 
-1.  GETTING STARTED - INSTALLATION
-2.  REGISTER CREDENTIALS
-3.  playPORTAL API CALLS
-
-====================================================
-
-1.  GETTING STARTED - INSTALLATION
-
-...1a.  Import the playPORTAL UNITY3D SDK unitypackage
-
-...1b.  Open Assets > playPORTAL > Scenes > playPORTAL example testing
-
-<TMP IMPORTER window will open>
-
-...1c.  Import TMP Essentials
-
-...1d.  Close TMP window
+For complete documentation and API instruction, visit <https://docs.playportal.io>.
 
 
-====================================================
+## Installation
 
-2.  REGISTER CREDENTIALS
-
-...2a.  Select Game Object "playPORTAL"
-...2b.  Click "playPORTAL Configuration" button
-
-[ALTERNATE: Window > playPORTAL Configuration]
-
-...2c. Enter Client ID and Client Secret
-
-NOTE: Default environment is Sandbox, may choose Production when ready for full production
-
-====================================================
-
-3.  playPORTAL API CALLS
-
-NOTE:  PlayPortalManager is the script making the server calls.
-
-Reference playPORTAL API documentation for more info 
-https://docs.playportal.io
+1. Import the PPSDK-Unity.unitypackage file.
+2. Open **Assets** > **playPORTAL** > **Scenes** > **playPORTAL example testing**
+3. TMP IMPORTER window will open
+4. Import TMP Essentials
 
 
-==================================================
-END README
-==================================================
+## Register Credentials
 
+1. Select Game Object "playPORTAL"
+2. Click "playPORTAL Configuration" button
+3. Alternate: **Window** > **playPORTAL Configuration**
+4. Enter Client ID and Client Secret
 
-
-
+**NOTE**: Default environment is Sandbox, choose Production when ready for release.
 
 
 
