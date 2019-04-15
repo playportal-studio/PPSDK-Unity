@@ -7,19 +7,16 @@ For complete documentation and API instruction, visit <https://docs.playportal.i
 
 ## Installation
 
-1. Import the PPSDK-Unity.unitypackage file.
-2. Open **Assets** > **playPORTAL** > **Scenes** > **playPORTAL example testing**.
-3. TMP IMPORTER window will open.
-4. Import TMP Essentials.
-5. If the importer does not open automatically, you can import manually by going to **Window** > **TextMeshPro** > **Import TMP Essential Resources**.
+[PPSDK-Unity]: https://github.com/playportal-studio/PPSDK-Unity
+1. Clone the **PPSDK-Unity** repo, found [here][PPSDK-Unity].
+2. To import, select **Assets** > **Import Package** > **Custom Package...** and select **PPSDK-Unity.unitypackage**.
+3. Import TMP Essentials by going to **Window** > **TextMeshPro** > **Import TMP Essential Resources**.
 
 
 
 ## Register Credentials
 
-1. Select Game Object "playPORTAL".
-2. Click "playPORTAL Configuration" button
-3. Alternate: **Window** > **playPORTAL Configuration**
+1. Select **Window** > **playPORTAL Configuration**.
 4. Enter Client ID and Client Secret from your playPORTAL studio account.
 
 **NOTE**: Default environment is Sandbox, choose Production when ready for release.
