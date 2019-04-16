@@ -5,6 +5,10 @@
 For complete documentation and API instruction, visit <https://docs.playportal.io>.
 
 
+**Note**: This SDK uses C# 6, which will require your project to use the .NET 4.6 runtime. Check out this [link][scripting runtime upgrade] for info on how to change it. 
+
+[scripting runtime upgrade]: https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html
+
 ## Installation
 
 1. Clone the **PPSDK-Unity** repo.
@@ -23,8 +27,6 @@ For complete documentation and API instruction, visit <https://docs.playportal.i
 
 ## Usage
 
-**Note**: This SDK uses C# 6, which will require your project to use the .NET 4.6 runtime. Check out this [link][scripting runtime upgrade] for info on how to change it. 
-[scripting runtime upgrade]: https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html
 
 To setup the authentication flow, you will use the **playPORTAL Login Button** Prefab, found in the **Project** tab under **Assets** > **playPORTAL** > **Prefabs**, and drop it into one of your scenes. Let's refer to it as your **LoginScene**. When the button is clicked, it will load the **playPORTAL Login** scene, which will allow users to authenticate into your game. If you are testing the SDK with a newly created Unity project, you can simply use the **Sample Scene** that Unity should automatically generate when creating a new project.
 
