@@ -67,7 +67,7 @@ At this point, your script should look something like this:
     	{
     		if (error != null) {
 				Debug.Log("Error logging in.");
-				Debug.Log(error.message);
+				Debug.Log(error.Message);
 			} else {
 				Debug.Log("Login successful.");
 				Debug.Log(userProfile.handle);
