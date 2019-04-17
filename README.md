@@ -5,7 +5,7 @@
 For complete documentation and API instruction, visit <https://docs.playportal.io>.
 
 
-**Note**: This SDK uses C# 7 features, which requires Unity 2018.3 and will require your project to use the .NET 4.6 runtime. Check out this [link][scripting runtime upgrade] for info on how to change it. 
+**NOTE**: This SDK uses C# 7 features, which requires Unity 2018.3 and will require your project to use the .NET 4.6 runtime. Check out this [link][scripting runtime upgrade] for info on how to change it. 
 
 [scripting runtime upgrade]: https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html
 
@@ -14,6 +14,8 @@ For complete documentation and API instruction, visit <https://docs.playportal.i
 1. Clone the **PPSDK-Unity** repo.
 2. To import, select **Assets** > **Import Package** > **Custom Package...** and select **PPSDK-Unity.unitypackage**.
 3. Import TMP Essentials by going to **Window** > **TextMeshPro** > **Import TMP Essential Resources**.
+
+**NOTE**: If you are getting errors in your console related to TextMeshPro, even after importing **TMP Essential Resources**, they should be cleared if you run your project.
 
 
 
@@ -67,7 +69,7 @@ At this point, your script should look something like this:
     	{
     		if (error != null) {
 				Debug.Log("Error logging in.");
-				Debug.Log(error.message);
+				Debug.Log(error.Message);
 			} else {
 				Debug.Log("Login successful.");
 				Debug.Log(userProfile.handle);
