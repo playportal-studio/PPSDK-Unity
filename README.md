@@ -84,12 +84,28 @@ Run the project. Your scene should contain the **playPORTAL Login Button** and w
  
 
 
+## Examples
+
+The SDK includes a **playPORTAL Example** scene and accompanying **PlayPortalExample** script. You can find the scene and script from your **Project** tab under **playPORTAL** > **Scenes** > **playPORTAL Example** and **playPORTAL** > **Scripts** > **PlayPortalExample**, respectively.
+
+Opening the **playPORTAL Example** scene, you'll see that it's a simple 2D screen with a number of buttons. Each button, when pressed, will call an accompanying method in the **PlayPortalExample** script. For example, pressing the 'Login' button from the example scene will call the `Login` method in **PlayPortalExample**.
+
+Note that to login through the example scene, you will need to enter the credentials for one of your Sandbox users. With the **playPORTAL Example** scene loaded, go to your **Hierarchy** tab and click the **PlayPortalExample** GameObject. Then, in the **Inspector** tab, you should see the **Play Portal Example** component that has a section called **Login Input**. Enter the username and password for one of your Sandbox users there. (You will have to also have your client Id and secret entered in **playPORTAL Configuration**. If you haven't already, take a look at the **Register Credentials** section for info on how to do that.)
+
+Feel free to edit the **PlayPortalExample** script as you please. Its purpose is for you to try out the SDK, see what methods/functionality is available, and how it works. 
 
 
+## Buckets and Data
 
+We'll give a high level overview of how data storage works with playPORTAL. Data is essentially stored as formless key-value pairs. If you have any experience with Javascript/JSON, then this should be familiar to you. There are three major ways of storing data: in a user's private app data, a shared bucket, and a global bucket. The main difference between the three is who has access to the data; however, they are all similar in that they are stored as key-value pairs. 
 
+User's private app data is data that only that user can edit and retrieve, and, if the user is a child, their parent as well.
 
+A bucket is data shared between one or more users. When creating a bucket, you specify what users are part of the bucket. Then the bucket can be edited and retrieved by any of those users.
 
+A global bucket is similar to a regular bucket, except that it is shared by all app users and therefore any user can edit or retrieve it.
+
+It's important to note that data is on a per-app basis. For example, if you have two apps on the playPORTAL platform, a bucket created in App1 is not available in App2. This is the same for private user data and global buckets. All data is scoped to a single app.
 
 
 
