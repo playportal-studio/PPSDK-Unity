@@ -5,7 +5,7 @@
 For complete documentation and API instruction, visit <https://docs.playportal.io>.
 
 
-**NOTE**: This SDK uses C# 7 features, which requires Unity 2018.3 and will require your project to use the .NET 4.6 runtime. Check out this [link][scripting runtime upgrade] for info on how to change it. 
+### **NOTE**: This SDK uses C# 7 features, which requires Unity 2018.3 and will require your project to use the .NET 4.6 runtime. Check out this [link][scripting runtime upgrade] for info on how to change it. 
 
 [scripting runtime upgrade]: https://docs.unity3d.com/Manual/ScriptingRuntimeUpgrade.html
 
